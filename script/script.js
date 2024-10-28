@@ -13,9 +13,14 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 
 console.clear();
 //km da percorrere
-const km = parseFloat(prompt("quanti km vuoi percorrere?"));
+let km = parseFloat(prompt("quanti km vuoi percorrere?"));
+// loop di validazione
+// while(isNaN(km)) {
+//    km = parseFloat(prompt("Valore invalido, inserire valore numerico per quanti km vuoi percorrere?"));
+// }
 
-
+const age = parseInt(prompt("quanti anni hai?"));
+// loop di validazione
 
 //prezzo per km
 const priceKm = 0.21;
@@ -32,26 +37,25 @@ let finalPrice = (priceKm * km);
 
 
 //validazione inserimento numero e non altri caratteri
-if (isNaN(km)){
-    alert("hai inserito un carattere non numerico");
-}
 
-else{
-    //età passeggero
-const age = parseInt(prompt("quanti anni hai?"));
+if(isNaN(km)) {
+    alert("km e eta devono avere valori numerici");
+} 
+else if(isNaN(age)) {
+    alert("hai inserito un carattere non numerico per l'eta");
+} else {
+    //costo under 18
+    if (age < 18) {
 
-//costo under 18
-    if(age < 18){
-    
-    let discount = (finalPrice / 100) * discountUnder;
-    finalPrice -= discount;
-    console.log(finalPrice.toFixed(2));
-    alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€");
+        let discount = (finalPrice / 100) * discountUnder;
+        finalPrice -= discount;
+        console.log(finalPrice.toFixed(2));
+        alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€");
     }
 
     //costo over 65
-    else if(age > 65){
-        
+    else if (age > 65) {
+
         let discount = (finalPrice / 100) * discountOver;
         finalPrice -= discount
         console.log(finalPrice.toFixed(2));
@@ -59,13 +63,54 @@ const age = parseInt(prompt("quanti anni hai?"));
     }
 
     //costo base
-    else{
-        
+    else {
+
         console.log(finalPrice.toFixed(2));
         alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€");
     }
-
 }
+
+// if (isNaN(km)) {
+//     alert("hai inserito un carattere non numerico");
+// } else {
+//     //età passeggero
+
+//     if (isNaN(age)) {
+//         alert("hai inserito un carattere non numerico");
+//     }
+
+//     else {
+
+
+
+//         //costo under 18
+//         if (age < 18) {
+
+//             let discount = (finalPrice / 100) * discountUnder;
+//             finalPrice -= discount;
+//             console.log(finalPrice.toFixed(2));
+//             alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€");
+//         }
+
+//         //costo over 65
+//         else if (age > 65) {
+
+//             let discount = (finalPrice / 100) * discountOver;
+//             finalPrice -= discount
+//             console.log(finalPrice.toFixed(2));
+//             alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€");
+//         }
+
+//         //costo base
+//         else {
+
+//             console.log(finalPrice.toFixed(2));
+//             alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€");
+//         }
+
+
+//     }
+// }
 
 
 
