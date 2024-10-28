@@ -27,4 +27,26 @@ const discountOver = 40;
 //costo del biglietto
 let finalPrice;
 
+if(age < 18){
+    finalPrice = (priceKm * km);
+    let discount = (finalPrice / 100) * discountUnder;
+    finalPrice -= discount;
+    console.log(finalPrice.toFixed(2));
+    alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€");
+    }
+    else if(age > 65){
+        finalPrice = (priceKm * km);
+        let discount = (finalPrice / 100) * discountOver;
+        finalPrice -= discount
+        console.log(finalPrice.toFixed(2));
+        alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€");
+    }
+    else{
+        finalPrice = (priceKm * km);
+        console.log(finalPrice.toFixed(2));
+        alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€" );
+    }
+
+
+
 
