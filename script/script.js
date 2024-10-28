@@ -27,6 +27,7 @@ const discountOver = 40;
 //costo del biglietto
 let finalPrice;
 
+//costo under 18
 if(age < 18){
     finalPrice = (priceKm * km);
     let discount = (finalPrice / 100) * discountUnder;
@@ -34,6 +35,8 @@ if(age < 18){
     console.log(finalPrice.toFixed(2));
     alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€");
     }
+
+    //costo over 65
     else if(age > 65){
         finalPrice = (priceKm * km);
         let discount = (finalPrice / 100) * discountOver;
@@ -41,10 +44,12 @@ if(age < 18){
         console.log(finalPrice.toFixed(2));
         alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€");
     }
+
+    //costo base
     else{
         finalPrice = (priceKm * km);
         console.log(finalPrice.toFixed(2));
-        alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€" );
+        alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€");
     }
 
 
