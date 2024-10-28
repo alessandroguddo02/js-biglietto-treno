@@ -9,6 +9,9 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 */
 
 
+"use strict";
+
+console.clear();
 //km da percorrere
 const km = parseFloat(prompt("quanti km vuoi percorrere?"));
 
