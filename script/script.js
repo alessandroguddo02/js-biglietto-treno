@@ -15,8 +15,7 @@ console.clear();
 //km da percorrere
 const km = parseFloat(prompt("quanti km vuoi percorrere?"));
 
-//età passeggero
-const age = parseInt(prompt("quanti anni hai?"));
+
 
 //prezzo per km
 const priceKm = 0.21;
@@ -28,11 +27,22 @@ const discountUnder = 20;
 const discountOver = 40;
 
 //costo del biglietto
-let finalPrice;
+let finalPrice = (priceKm * km);
+
+
+
+//validazione inserimento numero e non altri caratteri
+if (isNaN(km)){
+    alert("hai inserito un carattere non numerico");
+}
+
+else{
+    //età passeggero
+const age = parseInt(prompt("quanti anni hai?"));
 
 //costo under 18
-if(age < 18){
-    finalPrice = (priceKm * km);
+    if(age < 18){
+    
     let discount = (finalPrice / 100) * discountUnder;
     finalPrice -= discount;
     console.log(finalPrice.toFixed(2));
@@ -41,7 +51,7 @@ if(age < 18){
 
     //costo over 65
     else if(age > 65){
-        finalPrice = (priceKm * km);
+        
         let discount = (finalPrice / 100) * discountOver;
         finalPrice -= discount
         console.log(finalPrice.toFixed(2));
@@ -50,10 +60,12 @@ if(age < 18){
 
     //costo base
     else{
-        finalPrice = (priceKm * km);
+        
         console.log(finalPrice.toFixed(2));
         alert("il prezzo del biglietto è " + finalPrice.toFixed(2) + "€");
     }
+
+}
 
 
 
